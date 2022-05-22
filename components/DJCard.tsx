@@ -200,7 +200,7 @@ const DJCard = () => {
       <div className={styles.preview} ref={ref}>
         <div className={styles.previewImageContainer}>
           {info.avatar ? (
-            <img alt="avatar" src={info.avatar} onChange={updateAvatar} crossOrigin="anonymous" />
+            <img alt="avatar" src={info.avatar} crossOrigin="anonymous" />
           ) : (
             <div className={styles.blankPreview}></div>
           )}
