@@ -56,6 +56,16 @@ const DJCard = () => {
 
   const borderOptions = ["none", "white", "black"];
 
+  const backgroundStyle = {
+    backgroundImage: `repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0) 2px
+    ), url(${(info.avatar)})`
+  }
+
   const print = useCallback(() => {
     if (ref.current !== null) {
       toPng(ref.current, { cacheBust: true })
@@ -198,9 +208,10 @@ const DJCard = () => {
         </label>
       </form>
       <div className={styles.preview} ref={ref}>
+        <div className={styles.cardOverlay}></div>
         <div className={styles.previewImageContainer}>
           {info.avatar ? (
-            <img alt="avatar" src={info.avatar} crossOrigin="anonymous" />
+            <div style={backgroundStyle} />
           ) : (
             <div className={styles.blankPreview}></div>
           )}

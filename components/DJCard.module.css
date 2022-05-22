@@ -7,13 +7,13 @@
   border-radius: 6px;
 }
 
-.previewImageContainer img {
+.previewImageContainer div {
   width: 280px;
   max-width: 80vw;
   height: 300px;
   max-height: 80vw;
   border-radius: 6px;
-  object-fit: cover;
+  background-size: cover;
 }
 
 .form {
@@ -25,7 +25,7 @@
   width: 200px;
 }
 
-.form label input[type=file] {
+.form label input[type="file"] {
   font-family: "Abel";
 }
 
@@ -36,16 +36,34 @@
   align-items: center;
   border-radius: 24px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   max-width: 90vw;
   padding: 1rem 0.75rem;
+  position: relative;
   background-image: repeating-linear-gradient(
     to bottom right,
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.3) 1px,
     rgba(255, 255, 255, 0.3) 1px,
     rgba(255, 255, 255, 0.5) 2px
+  );
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1) 1px,
+    rgba(0, 0, 0, 0.1) 1px,
+    rgba(0, 0, 0, 0) 2px
   ), url(/beige-paper.png);
+  background-size: 100% 100%;
 }
 
 .form label {
@@ -88,20 +106,13 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.previewDetail span:nth-child(1) {
-  flex: 3;
-}
-
-.previewDetail span:nth-child(1) {
-  flex: 1;
-}
-
 .textBorderTypes {
   display: flex;
   max-width: 200px;
 }
 
-.textBorderTypes input, .textBorderTypes button {
+.textBorderTypes input,
+.textBorderTypes button {
   flex: 1;
 }
 
